@@ -19,9 +19,7 @@ class GameMapTest {
 		int min2 = 4;
 		GameMap gMap = new GameMap(min, min);
 		int y = gMap.getWidth();
-		System.out.println("valid");
 		assertTrue(y > min);
-		System.out.println("invalid");
 		assertTrue(y < min2);
 	}
 }
