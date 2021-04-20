@@ -68,4 +68,4 @@ class PlayerTest {
 	    player.move(DIRECTION_RIGHT);
 	    assertEquals(4, player.getX());
 	}
-}
+} 
