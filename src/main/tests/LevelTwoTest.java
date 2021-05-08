@@ -1,15 +1,15 @@
 package main.game;
-
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertSame;
-
+import static org.testng.Assert.assertThrows;
+import static org.testng.Assert.assertTrue;
 
 import main.game_objects.Player;
 import main.game_objects.Position;
 import org.testng.annotations.Test;
 
-public class LevelOneTest {
+public class LevelTwoTest {
     @Test
     public void testConstructor() {
         GameMap gameMap = new GameMap(1, 1);
@@ -18,7 +18,7 @@ public class LevelOneTest {
         char[] toCharArrayResult = "AAAAAAAA".toCharArray();
         char[] toCharArrayResult1 = "AAAAAAAA".toCharArray();
         Position position1 = new Position(2, 3);
-        new LevelOne(gameMap, player, new Display(
+        new LevelTwo(gameMap, player, new Display(
                 new char[][]{toCharArrayResult, toCharArrayResult1, "AAAAAAAA".toCharArray()}, new Player(position1)));
         assertEquals(3, gameMap.getHeight());
         assertEquals(5, gameMap.getWidth());

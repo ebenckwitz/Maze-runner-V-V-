@@ -1,40 +1,40 @@
 package main.game_objects;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertSame;
+import static org.testng.Assert.assertThrows;
+import static org.testng.Assert.assertTrue;
 
-import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 
-class PositionTest {
+public class PositionTest {
+    @Test
+    public void testEquals() {
+        assertFalse((new Position(2, 3)).equals("Obj"));
+    }
 
-	@Test
-	void testGetX() {
-		Position pos = new Position(0, 0);
-        pos.getX();
-        assertTrue(pos.getX() == 0);
-        assertFalse(pos.getX() == 5);
-	}
-	
-	@Test
-	void testGetY() {
-		Position pos = new Position(5, 5);
-        pos.getY();
-        assertTrue(pos.getY() == 5);
-        assertFalse(pos.getY() == 3);
-	}
-	
-	@Test
-	void testToString() {
-		Position pos = new Position(5, 5);
-		pos.toString();
-		assertEquals(pos.toString(), "5, 5");
-		assertEquals(pos.toString(), "0, 0");
-	}
-	
-	@Test
-	void testEquals() {
-		Position pos = new Position(5, 5);
-		pos.equals(pos);
-		Assert.assertSame(pos, pos);
-	}
+    @Test
+    public void testEquals2() {
+        Position position = new Position(2, 3);
+        assertTrue(position.equals(new Position(2, 3)));
+    }
+
+    @Test
+    public void testEquals3() {
+        Position position = new Position(0, 3);
+        assertFalse(position.equals(new Position(2, 3)));
+    }
+
+    @Test
+    public void testEquals4() {
+        Position position = new Position(2, 0);
+        assertFalse(position.equals(new Position(2, 3)));
+    }
+
+    @Test
+    public void testToString() {
+        assertEquals("2, 3", (new Position(2, 3)).toString());
+    }
 }
+

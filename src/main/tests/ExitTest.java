@@ -1,42 +1,74 @@
-package tests;
+package main.game_objects;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.Test;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertSame;
+import static org.testng.Assert.assertThrows;
+import static org.testng.Assert.assertTrue;
 
 import main.game.GameMap;
-import main.game_objects.Exit;
-import main.game_objects.Player;
-import main.game_objects.Position;
+import org.testng.annotations.Test;
 
-class ExitTest {
 
-	@Test
-	void generateExitPositionTest() {
-		GameMap gameMap = new GameMap(5, 5);
-		
-		Position position = new Position(3,4); //quadrant 4
-		Player player = new Player(position);
-		Position expectedPos = new Position(18,9);
-		assertEquals(expectedPos, Exit.generateExitPosition(gameMap, player));
-		
-		position = new Position(1,1); //quadrant 2
-		player = new Player(position);
-		expectedPos = new Position(18,9);
-		assertEquals(expectedPos, Exit.generateExitPosition(gameMap, player));
-		
-		position = new Position(3,2); //quadrant 1
-		player = new Player(position);
-		expectedPos = new Position(18,9);
-		assertEquals(expectedPos, Exit.generateExitPosition(gameMap, player));
-		
-		position = new Position(1,3); //quadrant 3
-		player = new Player(position);
-		expectedPos = new Position(18,9);
-		assertEquals(expectedPos, Exit.generateExitPosition(gameMap, player));
-		assertTrue(Exit.generateExitPosition(gameMap, player) == expectedPos);
-		
-		
-	}
-
+public class ExitTest {
+//    @Test
+//    public void testGenerateExitPosition() {
+//        GameMap gameMap = mock(GameMap.class);
+//        when(gameMap.getHeight()).thenReturn(1);
+//        when(gameMap.getWidth()).thenReturn(1);
+//        Position actualGenerateExitPositionResult = Exit.generateExitPosition(gameMap, new Player(new Position(2, 3)));
+//        assertEquals(2, actualGenerateExitPositionResult.getX());
+//        assertEquals(1, actualGenerateExitPositionResult.getY());
+//        verify(gameMap).getWidth();
+//        verify(gameMap).getHeight();
+//    }
+//
+//    @Test
+//    public void testGenerateExitPosition2() {
+//        GameMap gameMap = mock(GameMap.class);
+//        when(gameMap.getHeight()).thenReturn(1);
+//        when(gameMap.getWidth()).thenReturn(1);
+//        Position actualGenerateExitPositionResult = Exit.generateExitPosition(gameMap, new Player(new Position(0, 3)));
+//        assertEquals(-2, actualGenerateExitPositionResult.getX());
+//        assertEquals(1, actualGenerateExitPositionResult.getY());
+//        verify(gameMap, times(2)).getWidth();
+//        verify(gameMap).getHeight();
+//    }
+//
+//    @Test
+//    public void testGenerateExitPosition3() {
+//        GameMap gameMap = mock(GameMap.class);
+//        when(gameMap.getHeight()).thenReturn(1);
+//        when(gameMap.getWidth()).thenReturn(1);
+//        Position actualGenerateExitPositionResult = Exit.generateExitPosition(gameMap, new Player(new Position(2, 0)));
+//        assertEquals(2, actualGenerateExitPositionResult.getX());
+//        assertEquals(-1, actualGenerateExitPositionResult.getY());
+//        verify(gameMap).getWidth();
+//        verify(gameMap, times(2)).getHeight();
+//    }
+//
+//    @Test
+//    public void testGenerateExitPosition4() {
+//        GameMap gameMap = mock(GameMap.class);
+//        when(gameMap.getHeight()).thenReturn(0);
+//        when(gameMap.getWidth()).thenReturn(1);
+//        Position actualGenerateExitPositionResult = Exit.generateExitPosition(gameMap, new Player(new Position(0, 3)));
+//        assertEquals(-2, actualGenerateExitPositionResult.getX());
+//        assertEquals(1, actualGenerateExitPositionResult.getY());
+//        verify(gameMap, times(2)).getWidth();
+//        verify(gameMap).getHeight();
+//    }
+//
+//    @Test
+//    public void testGenerateExitPosition5() {
+//        GameMap gameMap = mock(GameMap.class);
+//        when(gameMap.getHeight()).thenReturn(1);
+//        when(gameMap.getWidth()).thenReturn(1);
+//        Position actualGenerateExitPositionResult = Exit.generateExitPosition(gameMap, new Player(new Position(0, 0)));
+//        assertEquals(-2, actualGenerateExitPositionResult.getX());
+//        assertEquals(-1, actualGenerateExitPositionResult.getY());
+//        verify(gameMap, times(2)).getWidth();
+//        verify(gameMap, times(2)).getHeight();
+//    }
 }
+
